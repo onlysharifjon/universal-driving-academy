@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: premium driving academy website hero photograph, landscape 3:2 composition.
+Primary request: Create one refined, photorealistic editorial automotive image for Universal Driving Academy. Illustrative brand photography, not a representation of actual academy facilities.
+Scene/backdrop: an orderly paved driver training courtyard with subtle clean white lane markings, a quiet understated modern educational building, a few well-kept trees, and soft urban context reminiscent of Central Asia, with no identifiable landmarks. Uncluttered scene.
+Subject: a modern unbranded deep cobalt-blue compact sedan training car, parked, viewed from front three-quarter perspective, facing toward the left. Authentic realistic proportions, clean contemporary body, tasteful simple wheels, subtle real reflections. No people necessary.
+Composition/framing: landscape 3:2 photograph with the car in the right-central region, camera at about headlamp height, entire car visible and occupying around 65 percent of image width. Enough paved foreground and pale sky/building space around it. The car must not be an oversized close-up. Editorial composition with a quiet sophisticated sense of motion and possibility.
+Lighting/mood: soft morning daylight, bright, airy and calm, natural shadows. Premium, trustworthy, aspirational, educational, approachable. Crisp focus on car and immediate pavement, background softly separated but still natural.
+Color palette: deep blue car, pale blue and bright neutral gray surroundings, fresh muted greenery.
+Constraints: realistic high-end photograph, no text, no writing, no logos, no badges, no readable license plates, no watermark, no floating UI, no montage, no collage, no racing imagery, no futuristic fantasy shapes. Avoid dramatic over-processed HDR, heavy vignettes and artificial lens flares.
