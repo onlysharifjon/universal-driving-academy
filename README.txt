@@ -4,6 +4,8 @@ Files to publish: dist/
 Entry page: dist/index.html
 Styles: dist/styles.css
 Interactive guide: dist/app.js
+Languages: dist/translations.js, dist/quiz-translations.js and dist/i18n.js
+Categories and learning details: dist/offerings.css
 Public business contacts: dist/config.js
 
 Edit only verified phone, Telegram URL and address in UDA_CONTACT.
@@ -11,6 +13,17 @@ Accepted Telegram URL format: https://t.me/username
 No contacts or course prices were invented. A contact notice is displayed
 until the business owner supplies real details. The guide gives a preparation
 recommendation and saves/copies it; it does not submit an application.
+
+The website supports Uzbek (Latin), Russian and English. The header language
+selection is saved locally when browser storage is available. A ?lang=uz,
+?lang=ru or ?lang=en URL also selects the display language. The lesson language
+is chosen independently in the guide. The five-step guide includes experience,
+goal, license category, lesson language and preferred time. Category buttons
+prefill the requested category; saved recommendations include these choices.
+
+Owner-provided course details: A, B, C, D, BE, DE and CE; female instructors
+for female students and male instructors for male students; lessons in Uzbek,
+Russian and English; flexible scheduling; driving practice in different weather.
 
 Preview with a static HTTP server, for example:
 python -m http.server 4173 --bind 127.0.0.1 --directory dist

@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b2d55">
-  <title>Universal Driving Academy — Ishonch bilan rulga o‘tiring</title>
-  <meta name="description" content="Universal Driving Academy — haydovchilik sari birinchi qadamingiz. Nazariy bilim, amaliy ko‘nikma va xalqaro yo‘nalish. Sizga mos tayyorgarlikni tanlang.">
-  <meta property="og:title" content="Universal Driving Academy">
-  <meta property="og:description" content="Yo‘lingizni ishonch bilan boshlang. Sizga mos haydovchilik tayyorgarligini toping.">
+  <title data-i18n="meta.title">Universal Driving Academy — Ishonch bilan rulga o‘tiring</title>
+  <meta name="description" content="Universal Driving Academy — haydovchilik sari birinchi qadamingiz. Nazariy bilim, amaliy ko‘nikma va xalqaro yo‘nalish. Sizga mos tayyorgarlikni tanlang." data-i18n-content="meta.description">
+  <meta property="og:title" content="Universal Driving Academy" data-i18n-content="meta.ogtitle">
+  <meta property="og:description" content="Yo‘lingizni ishonch bilan boshlang. Sizga mos haydovchilik tayyorgarligini toping." data-i18n-content="meta.ogdesc">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://universal-driving-academy.lunarplume4.chatgpt.site/assets/hero-driving.webp">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -15,12 +15,16 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="globe.css">
   <link rel="stylesheet" href="cta-motion.css">
+  <link rel="stylesheet" href="offerings.css">
   <script src="config.js" defer></script>
+  <script src="translations.js" defer></script>
+  <script src="quiz-translations.js" defer></script>
+  <script src="i18n.js" defer></script>
   <script src="app.js" defer></script>
   <script src="animations.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Asosiy mazmunga o‘tish</a>
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Asosiy mazmunga o‘tish</a>
   <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
     <symbol id="diagonal" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
@@ -36,98 +40,123 @@
 
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#" aria-label="Universal Driving Academy — bosh sahifa"><img src="assets/uda-brand.svg" alt="Universal Driving Academy" width="160" height="61"></a>
-      <nav class="desktop-nav" aria-label="Asosiy navigatsiya">
-        <a href="#akademiya">Akademiya</a><a href="#yonalishlar">Yo‘nalishlar</a><a href="#jarayon">O‘qish jarayoni</a><a href="#savollar">Savollar</a>
+      <a class="brand" href="#" aria-label="Universal Driving Academy — bosh sahifa" data-i18n-aria-label="brand.home"><img src="assets/uda-brand.svg" alt="Universal Driving Academy" data-i18n-alt="brand.name" width="160" height="61"></a>
+      <nav class="desktop-nav" aria-label="Asosiy navigatsiya" data-i18n-aria-label="nav.main">
+        <a href="#akademiya" data-i18n="nav.academy">Akademiya</a><a href="#yonalishlar" data-i18n="nav.courses">Yo‘nalishlar</a><a href="#jarayon" data-i18n="nav.process">O‘qish jarayoni</a><a href="#savollar" data-i18n="nav.faq">Savollar</a>
       </nav>
-      <button class="button button-small header-cta" data-open-quiz>Yo‘nalish tanlash <svg><use href="#diagonal"/></svg></button>
+      <div class="language-control"><select id="site-language" aria-label="Tilni tanlang" data-i18n-aria-label="nav.language"><option value="uz">O‘zbek (lotin)</option><option value="ru">Русский</option><option value="en">English</option></select></div>
+      <button class="button button-small header-cta" data-open-quiz><span class="i18n-text" data-i18n="nav.choose">Yo‘nalish tanlash</span> <svg><use href="#diagonal"/></svg></button>
       <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menyuni ochish"><span></span><span></span></button>
     </div>
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobil navigatsiya" hidden><a href="#akademiya">Akademiya</a><a href="#yonalishlar">Yo‘nalishlar</a><a href="#jarayon">O‘qish jarayoni</a><a href="#savollar">Savollar</a><button class="button" data-open-quiz>Yo‘nalish tanlash <svg><use href="#arrow"/></svg></button></nav>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobil navigatsiya" data-i18n-aria-label="nav.mobile" hidden><a href="#akademiya" data-i18n="nav.academy">Akademiya</a><a href="#yonalishlar" data-i18n="nav.courses">Yo‘nalishlar</a><a href="#jarayon" data-i18n="nav.process">O‘qish jarayoni</a><a href="#savollar" data-i18n="nav.faq">Savollar</a><button class="button" data-open-quiz><span class="i18n-text" data-i18n="nav.choose">Yo‘nalish tanlash</span> <svg><use href="#arrow"/></svg></button></nav>
   </header>
 
   <main id="main">
     <section class="hero container" aria-labelledby="hero-title">
       <div class="hero-copy">
         <div class="eyebrow"><span class="status-dot"></span> UNIVERSAL DRIVING ACADEMY</div>
-        <h1 id="hero-title">Yo‘lingizni<br><span>ishonch bilan</span><br>boshlang.</h1>
-        <p>Rul ortidagi erkinlik — to‘g‘ri tayyorgarlikdan boshlanadi. Bilimdan amaliyotgacha, ilk qadamingizdan katta yo‘llargacha.</p>
-        <div class="hero-actions"><button class="button" data-open-quiz>Menga mos yo‘nalish <svg><use href="#diagonal"/></svg></button><a class="text-link" href="#jarayon">Qanday boshlayman? <svg><use href="#arrow"/></svg></a></div>
-        <div class="hero-footnote"><span class="mini-wheel"><svg><use href="#wheel"/></svg></span><span>Shunchaki haydash emas.<br><strong>Mas’uliyat bilan yo‘lga chiqish.</strong></span></div>
+        <h1 id="hero-title" data-i18n-html="hero.title">Yo‘lingizni<br><span>ishonch bilan</span><br>boshlang.</h1>
+        <p data-i18n="hero.description">Rul ortidagi erkinlik — to‘g‘ri tayyorgarlikdan boshlanadi. Erkin grafik: dars vaqti sizga qulay tarzda instruktor bilan kelishiladi.</p>
+        <div class="hero-actions"><button class="button" data-open-quiz><span class="i18n-text" data-i18n="hero.choose">Menga mos yo‘nalish</span> <svg><use href="#diagonal"/></svg></button><a class="text-link" href="#jarayon"><span class="i18n-text" data-i18n="hero.how">Qanday boshlayman?</span> <svg><use href="#arrow"/></svg></a></div>
+        <div class="hero-footnote"><span class="mini-wheel"><svg><use href="#wheel"/></svg></span><span data-i18n-html="hero.footnote">Shunchaki haydash emas.<br><strong>Mas’uliyat bilan yo‘lga chiqish.</strong></span></div>
       </div>
       <div class="hero-visual">
-        <img class="hero-photo" src="assets/hero-driving.webp" width="1536" height="1024" alt="Ochiq o‘quv maydonida ko‘k avtomobil — akademiya uchun yaratilgan vizual konsept" fetchpriority="high">
-        <span class="photo-label"><span></span> YANGI YO‘LLAR. YANGI IMKONIYATLAR.</span>
-        <div class="hero-caption"><span class="caption-icon"><svg><use href="#route"/></svg></span><div>Ilk darsdan<br><strong>mustaqil haydashgacha.</strong></div></div>
-        <span class="visual-note">Vizual konsept</span>
+        <img class="hero-photo" src="assets/hero-driving.webp" width="1536" height="1024" alt="Ochiq o‘quv maydonida ko‘k avtomobil — akademiya uchun yaratilgan vizual konsept" data-i18n-alt="hero.imageAlt" fetchpriority="high">
+        <span class="photo-label"><span></span><span class="i18n-text" data-i18n="hero.photoLabel">YANGI YO‘LLAR. YANGI IMKONIYATLAR.</span></span>
+        <div class="hero-caption"><span class="caption-icon"><svg><use href="#route"/></svg></span><div data-i18n-html="hero.caption">Ilk darsdan<br><strong>mustaqil haydashgacha.</strong></div></div>
+        <span class="visual-note" data-i18n="hero.visualNote">Vizual konsept</span>
       </div>
     </section>
 
-    <div class="container foundation-strip" aria-label="Tayyorgarlik asoslari">
-      <div><svg><use href="#book"/></svg><span><strong>Puxta nazariya</strong><small>Har bir qarorning asosi — bilim</small></span></div>
-      <div><svg><use href="#wheel"/></svg><span><strong>Ongli amaliyot</strong><small>Ko‘nikma takrorlash bilan shakllanadi</small></span></div>
-      <div><svg><use href="#globe"/></svg><span><strong>Kengroq imkoniyatlar</strong><small>Xalqaro yo‘nalishga ochiq qarash</small></span></div>
+    <div class="container foundation-strip" aria-label="Tayyorgarlik asoslari" data-i18n-aria-label="foundation.label">
+      <div><svg><use href="#book"/></svg><span><strong data-i18n="foundation.theory">Puxta nazariya</strong><small data-i18n="foundation.theoryDetail">Har bir qarorning asosi — bilim</small></span></div>
+      <div><svg><use href="#wheel"/></svg><span><strong data-i18n="foundation.practice">Ongli amaliyot</strong><small data-i18n="foundation.practiceDetail">Ko‘nikma takrorlash bilan shakllanadi</small></span></div>
+      <div><svg><use href="#globe"/></svg><span><strong data-i18n="foundation.global">Kengroq imkoniyatlar</strong><small data-i18n="foundation.globalDetail">Xalqaro yo‘nalishga ochiq qarash</small></span></div>
     </div>
 
     <section class="section container academy" id="akademiya" aria-labelledby="academy-title">
-      <div class="section-kicker"><span>01 / AKADEMIYA</span><span class="kicker-rule"></span></div>
+      <div class="section-kicker"><span data-i18n="academy.kicker">01 / AKADEMIYA</span><span class="kicker-rule"></span></div>
       <div class="academy-layout">
-        <h2 id="academy-title">Yaxshi haydovchi.<br><span>Yaxshi boshlanish.</span></h2>
-        <div class="academy-copy"><p class="lead">Biz uchun haydovchilik — manzilga yetishdan ko‘proq.</p><p>Bu vaziyatni anglash, to‘g‘ri qaror qabul qilish va yo‘lda boshqalarga hurmat bilan munosabatda bo‘lishdir. Universal Driving Academy sizni aynan shu yondashuv bilan tanishtiradi.</p><a class="text-link" href="#yonalishlar">O‘z boshlanishingizni toping <svg><use href="#arrow"/></svg></a></div>
+        <h2 id="academy-title" data-i18n-html="academy.title">Yaxshi haydovchi.<br><span>Yaxshi boshlanish.</span></h2>
+        <div class="academy-copy"><p class="lead" data-i18n="academy.lead">Biz uchun haydovchilik — manzilga yetishdan ko‘proq.</p><p data-i18n="academy.description">Bu vaziyatni anglash, to‘g‘ri qaror qabul qilish va yo‘lda boshqalarga hurmat bilan munosabatda bo‘lishdir. Universal Driving Academy sizni aynan shu yondashuv bilan tanishtiradi.</p><a class="text-link" href="#yonalishlar"><span class="i18n-text" data-i18n="academy.link">O‘z boshlanishingizni toping</span> <svg><use href="#arrow"/></svg></a></div>
       </div>
-      <div class="academy-values"><span><svg><use href="#check"/></svg> Tushunib o‘rganish</span><span><svg><use href="#check"/></svg> Xavfsizlikni birinchi o‘ringa qo‘yish</span><span><svg><use href="#check"/></svg> Bosqichma-bosqich rivojlanish</span></div>
+      <div class="academy-values"><span><svg><use href="#check"/></svg><span class="i18n-text" data-i18n="academy.valueLearn">Tushunib o‘rganish</span></span><span><svg><use href="#check"/></svg><span class="i18n-text" data-i18n="academy.valueSafety">Xavfsizlikni birinchi o‘ringa qo‘yish</span></span><span><svg><use href="#check"/></svg><span class="i18n-text" data-i18n="academy.valueProgress">Bosqichma-bosqich rivojlanish</span></span></div>
     </section>
 
     <section class="courses-section section" id="yonalishlar" aria-labelledby="courses-title">
       <div class="container">
-        <div class="section-kicker"><span>02 / SIZNING YO‘NALISHINGIZ</span><span class="kicker-rule"></span></div>
-        <div class="section-heading"><h2 id="courses-title">Har kimning yo‘li<br><span>o‘ziga xos.</span></h2><p>Tajribangiz va maqsadingizga qarab,<br>tayyorgarlik uchun to‘g‘ri nuqtani tanlang.</p></div>
-        <div class="course-grid">
-          <article class="course-card"><div class="course-top"><span class="course-tag">BIRINCHI QADAM</span><svg><use href="#book"/></svg></div><div class="course-number">01</div><h3>Noldan<br>boshlayman.</h3><p>Haydashni endi o‘rganayotganlar uchun nazariy bilim va boshlang‘ich ko‘nikmalar yo‘nalishi.</p><ul><li>Yo‘l qoidalarini tushunish</li><li>Avtomobil bilan tanishish</li><li>Dastlabki amaliy ko‘nikmalar</li></ul><button class="course-link" data-open-quiz data-preset="beginner">Shu yerdan boshlash <span><svg><use href="#diagonal"/></svg></span></button></article>
-          <article class="course-card course-featured"><div class="course-top"><span class="course-tag">KO‘PROQ ISHONCH</span><svg><use href="#wheel"/></svg></div><div class="course-number">02</div><h3>Erkinroq<br>haydayman.</h3><p>Asosiy bilimlari bor, amaliy ko‘nikmalarini mustahkamlashni istaganlar uchun yo‘nalish.</p><ul><li>Qiyin vaziyatlarni aniqlash</li><li>Boshqaruvni mustahkamlash</li><li>Ongli qaror qabul qilish</li></ul><button class="course-link" data-open-quiz data-preset="practice">Maqsadimni belgilash <span><svg><use href="#diagonal"/></svg></span></button></article>
-          <article class="course-card"><div class="course-top"><span class="course-tag">KATTA MAQSADLAR</span><svg><use href="#globe"/></svg></div><div class="course-number">03</div><h3>Yangi yo‘llarga<br>tayyorlanaman.</h3><p>Xorijda haydashni rejalashtirayotganlar uchun xalqaro yo‘nalish bo‘yicha tayyorgarlik.</p><ul><li>Maqsad mamlakatni belgilash</li><li>Hujjatlar bo‘yicha savollar</li><li>Shaxsiy tayyorgarlik rejasi</li></ul><button class="course-link" data-open-quiz data-preset="international">Yo‘nalishni o‘rganish <span><svg><use href="#diagonal"/></svg></span></button></article>
+        <div class="section-kicker"><span data-i18n="courses.kicker">02 / SIZNING YO‘NALISHINGIZ</span><span class="kicker-rule"></span></div>
+        <div class="section-heading"><h2 id="courses-title" data-i18n-html="courses.title">Har kimning yo‘li<br><span>o‘ziga xos.</span></h2><p data-i18n-html="courses.intro">Tajribangiz va maqsadingizga qarab,<br>tayyorgarlik uchun to‘g‘ri nuqtani tanlang.</p></div>
+        <div class="academy-offerings">
+          <div class="offerings-heading">
+            <div><span class="offerings-eyebrow" data-i18n="offerings.eyebrow">HAYDOVCHILIK TOIFALARI</span><h3 id="categories-title" data-i18n="offerings.title">7 toifa. Sizga mos yo‘nalish.</h3></div>
+            <p data-i18n="offerings.intro">Kerakli toifani tanlang va tayyorgarlik rejangizni boshlang.</p>
+          </div>
+          <div class="category-grid" role="group" aria-labelledby="categories-title">
+            <button class="category-card" type="button" data-open-quiz data-category="A"><span class="category-top"><strong>A</strong><svg class="category-arrow" aria-hidden="true"><use href="#diagonal"/></svg></span><svg class="vehicle-icon" viewBox="0 0 64 40" aria-hidden="true"><circle cx="15" cy="29" r="8"/><circle cx="49" cy="29" r="8"/><path d="m15 29 10-15h14l10 15M15 29h17l-7-15m7 15 8-13-3-10h-8m-9 8h10m10-8h6"/></svg><span class="category-name" data-i18n="offerings.categoryA">Mototsikl</span></button>
+            <button class="category-card" type="button" data-open-quiz data-category="B"><span class="category-top"><strong>B</strong><svg class="category-arrow" aria-hidden="true"><use href="#diagonal"/></svg></span><svg class="vehicle-icon" viewBox="0 0 64 40" aria-hidden="true"><circle cx="16" cy="30" r="5"/><circle cx="49" cy="30" r="5"/><path d="M11 30H5V19l7-3 7-10h23l10 11 7 3v10h-5M21 30h23M12 16h40M29 6v10M7 22h6m39 0h5"/></svg><span class="category-name" data-i18n="offerings.categoryB">Yengil avtomobil</span></button>
+            <button class="category-card" type="button" data-open-quiz data-category="C"><span class="category-top"><strong>C</strong><svg class="category-arrow" aria-hidden="true"><use href="#diagonal"/></svg></span><svg class="vehicle-icon" viewBox="0 0 64 40" aria-hidden="true"><circle cx="15" cy="31" r="5"/><circle cx="49" cy="31" r="5"/><path d="M10 31H5V7h32v24H20m17 0h7m10 0h5V20l-9-9H37M44 11v11h15M5 24h32"/></svg><span class="category-name" data-i18n="offerings.categoryC">Yuk avtomobili</span></button>
+            <button class="category-card" type="button" data-open-quiz data-category="D"><span class="category-top"><strong>D</strong><svg class="category-arrow" aria-hidden="true"><use href="#diagonal"/></svg></span><svg class="vehicle-icon" viewBox="0 0 64 40" aria-hidden="true"><circle cx="15" cy="31" r="5"/><circle cx="49" cy="31" r="5"/><path d="M10 31H5V10a4 4 0 0 1 4-4h42a7 7 0 0 1 7 7v18h-4M20 31h24M5 20h53M18 6v14M31 6v14M44 6v14M7 25h4m42 0h4"/></svg><span class="category-name" data-i18n="offerings.categoryD">Avtobus</span></button>
+            <button class="category-card" type="button" data-open-quiz data-category="BE"><span class="category-top"><strong>BE</strong><svg class="category-arrow" aria-hidden="true"><use href="#diagonal"/></svg></span><svg class="vehicle-icon" viewBox="0 0 64 40" aria-hidden="true"><circle cx="10" cy="30" r="4"/><circle cx="29" cy="30" r="4"/><circle cx="51" cy="30" r="4"/><path d="M6 30H3V20l5-2 5-8h14l7 8 3 3v9h-4M14 30h11M8 18h26M21 10v8m16 9h6m0 3V15h18v15h-6m-8 0h-4"/></svg><span class="category-name" data-i18n="offerings.categoryBE">Tirkamali yengil avtomobil</span></button>
+            <button class="category-card" type="button" data-open-quiz data-category="DE"><span class="category-top"><strong>DE</strong><svg class="category-arrow" aria-hidden="true"><use href="#diagonal"/></svg></span><svg class="vehicle-icon" viewBox="0 0 64 40" aria-hidden="true"><circle cx="10" cy="30" r="4"/><circle cx="31" cy="30" r="4"/><circle cx="52" cy="30" r="4"/><path d="M6 30H3V10a3 3 0 0 1 3-3h27a5 5 0 0 1 5 5v18h-3M14 30h13M3 20h35M14 7v13M25 7v13m13 7h7m0 3V15h16v15h-5m-8 0h-3"/></svg><span class="category-name" data-i18n="offerings.categoryDE">Tirkamali avtobus</span></button>
+            <button class="category-card" type="button" data-open-quiz data-category="CE"><span class="category-top"><strong>CE</strong><svg class="category-arrow" aria-hidden="true"><use href="#diagonal"/></svg></span><svg class="vehicle-icon" viewBox="0 0 64 40" aria-hidden="true"><circle cx="10" cy="30" r="4"/><circle cx="32" cy="30" r="4"/><circle cx="52" cy="30" r="4"/><path d="M6 30H3V8h20v22h-9m9 0h5m8 0h3V19l-7-8h-9m4 0v10h12m0 6h6m0 3V13h16v17h-5m-8 0h-3M3 23h20"/></svg><span class="category-name" data-i18n="offerings.categoryCE">Tirkamali yuk avtomobili</span></button>
+          </div>
+          <div class="study-benefits">
+            <article class="study-benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2m2-16a3 3 0 0 1 0 6m2 10v-2a6 6 0 0 0-2-4"/></svg></span><div><h4 data-i18n="offerings.instructorTitle">Sizga mos instruktor</h4><p data-i18n="offerings.instructorBody">Ayollar bilan ayol instruktorlar, erkaklar bilan erkak instruktorlar ishlaydi.</p></div></article>
+            <article class="study-benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H9l-5 4V4Z"/><path d="M8 8h8M8 12h5"/></svg></span><div><h4 data-i18n="offerings.languageTitle">Uch tilda ta’lim</h4><p data-i18n="offerings.languageBody">Darslar o‘zbek (lotin), rus va ingliz tillarida olib boriladi.</p></div></article>
+            <article class="study-benefit"><span class="benefit-icon"><svg aria-hidden="true"><use href="#clock"/></svg></span><div><h4 data-i18n="offerings.scheduleTitle">Erkin dars jadvali</h4><p data-i18n="offerings.scheduleBody">Darslar erkin grafikda o‘tiladi. Qulay kun va vaqtlar instruktor bilan kelishiladi.</p></div></article>
+            <article class="study-benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 15H6a4 4 0 1 1 1.5-7.7A5 5 0 0 1 17 9h.5a3 3 0 0 1 0 6H17M7 18l-1 3m6-3-1 3m6-3-1 3"/><path d="M18 2v2m3 1-1 1M13 3l1 1"/></svg></span><div><h4 data-i18n="offerings.weatherTitle">Turli ob-havoda amaliyot</h4><p data-i18n="offerings.weatherBody">Turli ob-havo sharoitida avtomobilni boshqarish bo‘yicha mashg‘ulotlar olib boriladi.</p></div></article>
+          </div>
         </div>
-        <p class="section-note">Yo‘nalishlar tayyorgarlik maqsadini tanlashga yordam beradi. Dastur tarkibi, jadval va qabul shartlari alohida aniqlashtiriladi.</p>
+        <div class="course-grid">
+          <article class="course-card"><div class="course-top"><span class="course-tag" data-i18n="courses.beginner.tag">BIRINCHI QADAM</span><svg><use href="#book"/></svg></div><div class="course-number">01</div><h3 data-i18n-html="courses.beginner.title">Noldan<br>boshlayman.</h3><p data-i18n="courses.beginner.description">Haydashni endi o‘rganayotganlar uchun nazariy bilim va boshlang‘ich ko‘nikmalar yo‘nalishi.</p><ul><li data-i18n="courses.beginner.bullet1">Yo‘l qoidalarini tushunish</li><li data-i18n="courses.beginner.bullet2">Avtomobil bilan tanishish</li><li data-i18n="courses.beginner.bullet3">Dastlabki amaliy ko‘nikmalar</li></ul><button class="course-link" data-open-quiz data-preset="beginner"><span class="i18n-text" data-i18n="courses.beginner.action">Shu yerdan boshlash</span> <span><svg><use href="#diagonal"/></svg></span></button></article>
+          <article class="course-card course-featured"><div class="course-top"><span class="course-tag" data-i18n="courses.practice.tag">KO‘PROQ ISHONCH</span><svg><use href="#wheel"/></svg></div><div class="course-number">02</div><h3 data-i18n-html="courses.practice.title">Erkinroq<br>haydayman.</h3><p data-i18n="courses.practice.description">Asosiy bilimlari borlar uchun amaliy ko‘nikmalarni mustahkamlash, jumladan, turli ob-havo sharoitida avtomashinani boshqarish mashg‘ulotlari.</p><ul><li data-i18n="courses.practice.bullet1">Turli ob-havo sharoitida haydash</li><li data-i18n="courses.practice.bullet2">Boshqaruvni mustahkamlash</li><li data-i18n="courses.practice.bullet3">Ongli qaror qabul qilish</li></ul><button class="course-link" data-open-quiz data-preset="practice"><span class="i18n-text" data-i18n="courses.practice.action">Maqsadimni belgilash</span> <span><svg><use href="#diagonal"/></svg></span></button></article>
+          <article class="course-card"><div class="course-top"><span class="course-tag" data-i18n="courses.international.tag">KATTA MAQSADLAR</span><svg><use href="#globe"/></svg></div><div class="course-number">03</div><h3 data-i18n-html="courses.international.title">Yangi yo‘llarga<br>tayyorlanaman.</h3><p data-i18n="courses.international.description">Xorijda haydashni rejalashtirayotganlar uchun xalqaro yo‘nalish bo‘yicha tayyorgarlik.</p><ul><li data-i18n="courses.international.bullet1">Maqsad mamlakatni belgilash</li><li data-i18n="courses.international.bullet2">Hujjatlar bo‘yicha savollar</li><li data-i18n="courses.international.bullet3">Shaxsiy tayyorgarlik rejasi</li></ul><button class="course-link" data-open-quiz data-preset="international"><span class="i18n-text" data-i18n="courses.international.action">Yo‘nalishni o‘rganish</span> <span><svg><use href="#diagonal"/></svg></span></button></article>
+        </div>
+        <p class="section-note" data-i18n="courses.note">Yo‘nalishlar tayyorgarlik maqsadini tanlashga yordam beradi. Erkin grafik: dars vaqti sizga qulay tarzda instruktor bilan kelishiladi. Dastur tarkibi va qabul shartlari alohida aniqlashtiriladi.</p>
       </div>
     </section>
 
     <section class="section container process" id="jarayon" aria-labelledby="process-title">
-      <div class="section-kicker"><span>03 / O‘QISH JARAYONI</span><span class="kicker-rule"></span></div>
-      <div class="section-heading"><h2 id="process-title">Katta yo‘lga —<br><span>aniq qadamlar bilan.</span></h2><p>Har bir bosqichning o‘z vazifasi bor.<br>Siz esa doim keyingi qadamingizni bilasiz.</p></div>
-      <ol class="process-steps"><li><span class="step-number">01</span><h3>Maqsadni tanlang</h3><p>Tajribangiz va nimani o‘rganmoqchi ekaningizni belgilang.</p></li><li><span class="step-number">02</span><h3>Rejani aniqlashtiring</h3><p>Dastur, dars vaqti va o‘qish shartlarini kelishib oling.</p></li><li><span class="step-number">03</span><h3>Bilimni amalda qo‘llang</h3><p>Nazariyani tushunib, ko‘nikmalaringizni bosqichma-bosqich rivojlantiring.</p></li><li><span class="step-number">04</span><h3>Ishonchni mustahkamlang</h3><p>O‘rganganlaringizni tahlil qiling va keyingi maqsadingizni belgilang.</p></li></ol>
+      <div class="section-kicker"><span data-i18n="process.kicker">03 / O‘QISH JARAYONI</span><span class="kicker-rule"></span></div>
+      <div class="section-heading"><h2 id="process-title" data-i18n-html="process.title">Katta yo‘lga —<br><span>aniq qadamlar bilan.</span></h2><p data-i18n-html="process.intro">Har bir bosqichning o‘z vazifasi bor.<br>Siz esa doim keyingi qadamingizni bilasiz.</p></div>
+      <ol class="process-steps"><li><span class="step-number">01</span><h3 data-i18n="process.step1.title">Maqsadni tanlang</h3><p data-i18n="process.step1.body">Tajribangiz va nimani o‘rganmoqchi ekaningizni belgilang.</p></li><li><span class="step-number">02</span><h3 data-i18n="process.step2.title">Rejani aniqlashtiring</h3><p data-i18n="process.step2.body">Dasturni tanlang va dars vaqtini instruktor bilan o‘zingizga qulay tarzda kelishib oling.</p></li><li><span class="step-number">03</span><h3 data-i18n="process.step3.title">Bilimni amalda qo‘llang</h3><p data-i18n="process.step3.body">Nazariyani tushunib, ko‘nikmalaringizni bosqichma-bosqich rivojlantiring.</p></li><li><span class="step-number">04</span><h3 data-i18n="process.step4.title">Ishonchni mustahkamlang</h3><p data-i18n="process.step4.body">O‘rganganlaringizni tahlil qiling va keyingi maqsadingizni belgilang.</p></li></ol>
     </section>
 
     <section class="international-section" id="xalqaro" aria-labelledby="international-title">
       <div class="container international-layout">
-        <div><div class="eyebrow light">UNIVERSAL — KENGROQ FIKRLASH</div><h2 id="international-title">Manzilingiz<br>yanada uzoqmi?</h2><p>Boshqa mamlakatda haydashni rejalashtiryapsizmi? Tayyorgarlikni to‘g‘ri savollardan boshlang: qayerga, qanday maqsadda va qaysi hujjatlar bilan?</p><button class="button button-white" data-open-quiz data-preset="international">Xalqaro yo‘nalishni tanlash <svg><use href="#diagonal"/></svg></button><small>Guvohnoma va hujjatlarning amal qilish shartlari mamlakatga qarab farqlanadi.</small></div>
+        <div><div class="eyebrow light" data-i18n="international.kicker">UNIVERSAL — KENGROQ FIKRLASH</div><h2 id="international-title" data-i18n-html="international.title">Manzilingiz<br>yanada uzoqmi?</h2><p data-i18n="international.description">Boshqa mamlakatda haydashni rejalashtiryapsizmi? Tayyorgarlikni to‘g‘ri savollardan boshlang: qayerga, qanday maqsadda va qaysi hujjatlar bilan?</p><button class="button button-white" data-open-quiz data-preset="international"><span class="i18n-text" data-i18n="international.action">Xalqaro yo‘nalishni tanlash</span> <svg><use href="#diagonal"/></svg></button><small data-i18n="international.note">Guvohnoma va hujjatlarning amal qilish shartlari mamlakatga qarab farqlanadi.</small></div>
         <div class="global-graphic motion-scene" data-motion-scene="earth" data-motion-active="false">
           <div class="globe-orbit orbit-one" aria-hidden="true"></div><div class="globe-orbit orbit-two" aria-hidden="true"></div>
           <div class="earth-stage" aria-hidden="true"><img class="earth-fallback" src="assets/earth-fallback.webp" width="720" height="720" alt="" loading="lazy"><canvas id="earth-canvas" width="480" height="480"></canvas></div>
-          <span class="globe-badge" aria-hidden="true"><svg><use href="#diagonal"/></svg> YANGI MANZILLAR SARI</span>
+          <span class="globe-badge" aria-hidden="true"><svg><use href="#diagonal"/></svg><span class="i18n-text" data-i18n="international.badge">YANGI MANZILLAR SARI</span></span>
           <button class="motion-toggle" type="button" data-motion-toggle aria-label="Animatsiyalarni to‘xtatish" aria-pressed="false" hidden><svg class="pause-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg><svg class="play-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg></button>
-          <a class="earth-credit" href="https://science.nasa.gov/earth/earth-observatory/the-blue-marble-true-color-global-imagery-at-1km-resolution/" target="_blank" rel="noopener noreferrer">Yer tasviri: NASA</a>
+          <a class="earth-credit" href="https://science.nasa.gov/earth/earth-observatory/the-blue-marble-true-color-global-imagery-at-1km-resolution/" target="_blank" rel="noopener noreferrer" data-i18n="international.credit">Yer tasviri: NASA</a>
         </div>
       </div>
     </section>
 
     <section class="section container faq-section" id="savollar" aria-labelledby="faq-title">
-      <div class="faq-intro"><div class="section-kicker"><span>04 / SAVOL-JAVOB</span></div><h2 id="faq-title">Savollaringiz<br><span>tabiiy.</span></h2><p>Ilk qadam oldidan bilish foydali bo‘lgan ma’lumotlar.</p><svg class="faq-icon"><use href="#route"/></svg></div>
+      <div class="faq-intro"><div class="section-kicker"><span data-i18n="faq.kicker">04 / SAVOL-JAVOB</span></div><h2 id="faq-title" data-i18n-html="faq.title">Savollaringiz<br><span>tabiiy.</span></h2><p data-i18n="faq.intro">Ilk qadam oldidan bilish foydali bo‘lgan ma’lumotlar.</p><svg class="faq-icon"><use href="#route"/></svg></div>
       <div class="faq-list">
-        <details open><summary>Haydash tajribam bo‘lmasa ham boshlashim mumkinmi?<svg><use href="#plus"/></svg></summary><div>Boshlang‘ich tayyorgarlik aynan ilk qadamlarni qo‘yayotganlar uchun mos yo‘nalish. Qabul shartlari va sizga mos dastur yozilishdan oldin aniqlashtiriladi.</div></details>
-        <details><summary>Nazariya va amaliyot qanday tashkil etiladi?<svg><use href="#plus"/></svg></summary><div>Nazariya yo‘l qoidalarini tushunishga, amaliyot esa boshqaruv ko‘nikmalarini rivojlantirishga xizmat qiladi. Ularning hajmi va mashg‘ulotlar tartibi tanlangan dastur bo‘yicha aniqlashtiriladi.</div></details>
-        <details><summary>Dars jadvalini o‘zimga moslashtira olamanmi?<svg><use href="#plus"/></svg></summary><div>O‘zingizga qulay kun va vaqtlarni oldindan belgilang. Mavjud guruhlar va mashg‘ulot vaqtlari asosida mos jadval tasdiqlanadi.</div></details>
-        <details><summary>O‘qish narxi qancha?<svg><use href="#plus"/></svg></summary><div>Amaldagi narxlar hozircha sahifada e’lon qilinmagan. Yozilishdan oldin tanlangan dastur narxi, unga nimalar kirishi va to‘lov shartlari aniqlashtiriladi.</div></details>
-        <details><summary>Guvohnomam bilan xorijda hayday olamanmi?<svg><use href="#plus"/></svg></summary><div>Bu boradigan mamlakatingiz va guvohnomangizga bog‘liq. Xalqaro yo‘nalish bo‘yicha maslahatga tayyorlanayotganda shu ma’lumotlarni belgilang va tegishli talablarni aniqlashtiring.</div></details>
+        <details open><summary><span class="i18n-text" data-i18n="faq.beginner.question">Haydash tajribam bo‘lmasa ham boshlashim mumkinmi?</span> <svg><use href="#plus"/></svg></summary><div data-i18n="faq.beginner.answer">Boshlang‘ich tayyorgarlik aynan ilk qadamlarni qo‘yayotganlar uchun mos yo‘nalish. Qabul shartlari va sizga mos dastur yozilishdan oldin aniqlashtiriladi.</div></details>
+        <details><summary><span class="i18n-text" data-i18n="faq.training.question">Nazariya va amaliyot qanday tashkil etiladi?</span> <svg><use href="#plus"/></svg></summary><div data-i18n="faq.training.answer">Nazariya yo‘l qoidalarini tushunishga, amaliyot esa boshqaruv ko‘nikmalarini rivojlantirishga xizmat qiladi. Turli ob-havo sharoitida ham avtomashinani boshqarish mashg‘ulotlari olib boriladi. Mashg‘ulotlar hajmi va tartibi tanlangan dastur bo‘yicha aniqlashtiriladi.</div></details>
+        <details><summary><span class="i18n-text" data-i18n="faq.schedule.question">Dars jadvalini o‘zimga moslashtira olamanmi?</span> <svg><use href="#plus"/></svg></summary><div data-i18n="faq.schedule.answer">Ha. Erkin grafik: dars vaqti sizga qulay tarzda instruktor bilan kelishiladi.</div></details>
+        <details><summary><span class="i18n-text" data-i18n="faq.price.question">O‘qish narxi qancha?</span> <svg><use href="#plus"/></svg></summary><div data-i18n="faq.price.answer">Amaldagi narxlar hozircha sahifada e’lon qilinmagan. Yozilishdan oldin tanlangan dastur narxi, unga nimalar kirishi va to‘lov shartlari aniqlashtiriladi.</div></details>
+        <details><summary><span class="i18n-text" data-i18n="faq.abroad.question">Guvohnomam bilan xorijda hayday olamanmi?</span> <svg><use href="#plus"/></svg></summary><div data-i18n="faq.abroad.answer">Bu boradigan mamlakatingiz va guvohnomangizga bog‘liq. Xalqaro yo‘nalish bo‘yicha maslahatga tayyorlanayotganda shu ma’lumotlarni belgilang va tegishli talablarni aniqlashtiring.</div></details>
+        <details><summary><span class="i18n-text" data-i18n="faq.languages.question">Darslar qaysi tillarda olib boriladi?</span><svg><use href="#plus"/></svg></summary><div data-i18n="faq.languages.answer">Darslar o‘zbek (lotin), rus va ingliz tillarida olib boriladi. O‘zingizga qulay tilni tanlashingiz mumkin.</div></details>
+        <details><summary><span class="i18n-text" data-i18n="faq.instructors.question">Instruktorlar qanday biriktiriladi?</span><svg><use href="#plus"/></svg></summary><div data-i18n="faq.instructors.answer">Ayol o‘quvchilarga ayol instruktorlar, erkak o‘quvchilarga erkak instruktorlar biriktiriladi.</div></details>
+        <details><summary><span class="i18n-text" data-i18n="faq.categories.question">Qaysi toifalar bo‘yicha ta’lim beriladi?</span><svg><use href="#plus"/></svg></summary><div data-i18n="faq.categories.answer">A, B, C, D, BE, DE va CE toifalari bo‘yicha ta’lim beriladi. Sizga kerakli toifani yozilish paytida belgilang.</div></details>
       </div>
     </section>
 
-    <section class="container final-cta motion-scene" id="aloqa" aria-labelledby="cta-title" data-motion-scene="steering" data-motion-active="false"><button class="motion-toggle" type="button" data-motion-toggle aria-label="Animatsiyalarni to‘xtatish" aria-pressed="false" hidden><svg class="pause-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg><svg class="play-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg></button><div class="cta-graphic" aria-hidden="true"><svg><use href="#wheel"/></svg></div><div class="cta-copy"><div class="eyebrow">BIRINCHI QADAM SIZDAN</div><h2 id="cta-title">Yo‘l sizni kutmoqda.</h2><p>Bir daqiqa ajrating. O‘zingizga mos boshlanishni toping.</p><button class="button" data-open-quiz>Yo‘nalishimni topish <svg><use href="#diagonal"/></svg></button><div id="contact-info" class="contact-info"><span>Qabul bo‘yicha aloqa ma’lumotlari hozircha ko‘rsatilmagan.</span></div></div></section>
+    <section class="container final-cta motion-scene" id="aloqa" aria-labelledby="cta-title" data-motion-scene="steering" data-motion-active="false"><button class="motion-toggle" type="button" data-motion-toggle aria-label="Animatsiyalarni to‘xtatish" aria-pressed="false" hidden><svg class="pause-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg><svg class="play-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg></button><div class="cta-graphic" aria-hidden="true"><svg><use href="#wheel"/></svg></div><div class="cta-copy"><div class="eyebrow" data-i18n="cta.kicker">BIRINCHI QADAM SIZDAN</div><h2 id="cta-title" data-i18n="cta.title">Yo‘l sizni kutmoqda.</h2><p data-i18n="cta.description">Bir daqiqa ajrating. O‘zingizga mos boshlanishni toping.</p><button class="button" data-open-quiz><span class="i18n-text" data-i18n="cta.action">Yo‘nalishimni topish</span> <svg><use href="#diagonal"/></svg></button><div id="contact-info" class="contact-info"><span data-i18n="cta.contactPending">Qabul bo‘yicha aloqa ma’lumotlari hozircha ko‘rsatilmagan.</span></div></div></section>
   </main>
 
-  <footer class="site-footer container"><div class="footer-top"><a class="brand" href="#" aria-label="Bosh sahifaga"><img src="assets/uda-brand.svg" alt="Universal Driving Academy" width="160" height="61" loading="lazy"></a><p>Bilim. Mas’uliyat. Erkinlik.</p><a href="#main" class="back-top">Yuqoriga <svg><use href="#diagonal"/></svg></a></div><div class="footer-bottom"><span>© <span id="year">2026</span> Universal Driving Academy.</span><span>Har bir yo‘l — yangi imkoniyat.</span></div></footer>
+  <footer class="site-footer container"><div class="footer-top"><a class="brand" href="#" aria-label="Bosh sahifaga" data-i18n-aria-label="footer.home"><img src="assets/uda-brand.svg" alt="Universal Driving Academy" data-i18n-alt="brand.name" width="160" height="61" loading="lazy"></a><p data-i18n="footer.motto">Bilim. Mas’uliyat. Erkinlik.</p><a href="#main" class="back-top"><span class="i18n-text" data-i18n="footer.top">Yuqoriga</span> <svg><use href="#diagonal"/></svg></a></div><div class="footer-bottom"><span>© <span id="year">2026</span> Universal Driving Academy.</span><span data-i18n="footer.line">Har bir yo‘l — yangi imkoniyat.</span></div></footer>
 
   <dialog id="guide-dialog" aria-labelledby="guide-title">
-    <div class="dialog-shell"><button class="dialog-close" aria-label="Oynani yopish"><svg><use href="#close"/></svg></button><span class="dialog-eyebrow">SIZ UCHUN MOS BOSHLANISH</span><div class="quiz-progress" aria-hidden="true"><span></span><span></span><span></span></div><div id="quiz-content"></div><div id="quiz-error" class="quiz-error" role="alert"></div><div class="quiz-actions"><button class="quiz-back text-link" type="button">Orqaga</button><button class="button quiz-next" type="button">Davom etish <svg><use href="#arrow"/></svg></button></div><p class="quiz-privacy">Bu yordamchi shaxsiy ma’lumotlaringizni so‘ramaydi va ariza yubormaydi.</p><div class="toast" role="status" aria-live="polite"></div></div>
+    <div class="dialog-shell"><button class="dialog-close" aria-label="Oynani yopish" data-i18n-aria-label="dialog.close"><svg><use href="#close"/></svg></button><span class="dialog-eyebrow" data-i18n="dialog.kicker">SIZ UCHUN MOS BOSHLANISH</span><div class="quiz-progress" aria-hidden="true"><span></span><span></span><span></span></div><div id="quiz-content"></div><div id="quiz-error" class="quiz-error" role="alert"></div><div class="quiz-actions"><button class="quiz-back text-link" type="button" data-i18n="dialog.back">Orqaga</button><button class="button quiz-next" type="button"><span class="i18n-text" data-i18n="dialog.next">Davom etish</span> <svg><use href="#arrow"/></svg></button></div><p class="quiz-privacy" data-i18n="dialog.privacy">Bu yordamchi shaxsiy ma’lumotlaringizni so‘ramaydi va ariza yubormaydi.</p><div class="toast" role="status" aria-live="polite"></div></div>
   </dialog>
 </body>
 </html>

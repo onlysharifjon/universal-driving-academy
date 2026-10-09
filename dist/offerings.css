@@ -1,0 +1,53 @@
+/* Category selection and practical learning details. */
+.academy-offerings{margin-bottom:48px}
+.offerings-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:22px}
+.offerings-eyebrow{display:block;color:var(--blue);font-size:9px;font-weight:700;letter-spacing:1.5px;line-height:1.6;margin-bottom:10px}
+.offerings-heading h3{font-size:26px;letter-spacing:-.8px;line-height:1.3}
+.offerings-heading>p{max-width:290px;font-size:12px;color:var(--muted);line-height:1.8}
+.category-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px}
+.category-card{display:flex;flex-direction:column;align-items:stretch;min-width:0;text-align:left;border:1px solid #d6e2ed;border-radius:12px;background:#fff;padding:17px 15px 15px;box-shadow:0 2px 5px #123c6003;transition:border-color .2s,background .2s,transform .2s,box-shadow .2s}
+.category-card:hover{border-color:#7da9cf;background:#f8fbff;transform:translateY(-3px);box-shadow:0 8px 20px #123c6008}
+.category-card:focus-visible{outline:3px solid #248be8;outline-offset:4px}
+.category-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+.category-top strong{font-size:30px;line-height:1.1;letter-spacing:-1px;color:var(--navy)}
+.category-arrow{width:16px;height:16px;color:#6f8da9;transition:transform .2s,color .2s}
+.category-card:hover .category-arrow{transform:translate(2px,-2px);color:var(--blue)}
+.vehicle-icon{height:40px;width:64px;max-width:100%;color:var(--blue);stroke-width:1.7;margin-bottom:12px}
+.category-name{font-size:11px;line-height:1.6;color:#52677e;font-weight:700;overflow-wrap:anywhere}
+.study-benefits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid #dce6f0;border-radius:12px;background:#eaf1f8;margin-top:20px;overflow:hidden}
+.study-benefit{display:flex;align-items:flex-start;gap:13px;padding:23px 22px;min-width:0}
+.study-benefit:nth-child(even){border-left:1px solid #d6e2ec}
+.study-benefit:nth-child(n+3){border-top:1px solid #d6e2ec}
+.benefit-icon{display:grid;place-items:center;flex-shrink:0;width:34px;height:34px;color:var(--blue);border-radius:9px;background:#fff9}
+.benefit-icon svg{width:20px;height:20px;stroke-width:1.6}
+.study-benefit h4{font-size:13px;line-height:1.5;margin:1px 0 7px;letter-spacing:-.1px}
+.study-benefit p{font-size:11px;line-height:1.8;color:#52677e;overflow-wrap:anywhere}
+
+/* The language remains reachable in both the desktop and mobile header. */
+.nav-wrap{gap:20px}
+.language-control{position:relative;flex-shrink:0}
+#site-language{display:block;max-width:122px;min-height:40px;padding:8px 25px 8px 11px;border:1px solid #dce5ee;border-radius:7px;background:#f7f9fc;color:var(--navy);font:700 11px/1.4 Manrope,'Segoe UI',sans-serif;cursor:pointer;appearance:auto}
+#site-language:focus-visible{outline:3px solid #248be8;outline-offset:3px}
+.nav-wrap>.desktop-nav{gap:22px}
+.course-link>.i18n-text,.course-link:hover>.i18n-text{display:block;width:auto;height:auto;border:0;border-radius:0;background:none}
+.photo-label>.i18n-text{width:auto;height:auto;background:none;border-radius:0}
+.academy-values .i18n-text{display:inline;font:inherit;color:inherit}
+
+/* Optional quiz category grid and chosen-preference summary. */
+.quiz-options.category-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.category-options .quiz-option{align-items:flex-start;padding:13px;gap:9px}
+.category-options .quiz-option input{margin-top:3px}
+.category-options .quiz-option strong{font-size:12px;color:var(--navy);overflow-wrap:anywhere}
+.category-options .quiz-option small{font-size:10px;line-height:1.6}
+.result-preferences{margin:20px 0 0;padding:15px 17px;border:1px solid #dbe6f0;border-radius:10px;background:#f6f9fd}
+.result-preferences>div{display:flex;justify-content:space-between;align-items:baseline;gap:18px;font-size:11px;line-height:1.8}
+.result-preferences>div+div{margin-top:7px;padding-top:7px;border-top:1px solid #e3eaf1}
+.result-preferences dt{color:#647385}
+.result-preferences dd{margin:0;text-align:right;font-weight:700;color:var(--ink)}
+
+@media(min-width:801px) and (max-width:1160px){.nav-wrap{gap:14px}.nav-wrap>.desktop-nav{gap:16px}.nav-wrap .header-cta{display:none}.nav-wrap>.language-control{margin-left:auto}.nav-wrap>.desktop-nav{margin-left:auto}}
+@media(max-width:1100px){.category-grid{grid-template-columns:repeat(12,minmax(0,1fr))}.category-card{grid-column:span 3;padding:18px}.category-card:nth-child(n+5){grid-column:span 4}.study-benefit{padding:20px 16px;gap:10px}.study-benefit h4{font-size:12px}.benefit-icon{width:30px;height:30px}}
+@media(max-width:800px){.nav-wrap>.language-control{margin-left:auto}.nav-wrap{gap:13px}.offerings-heading{align-items:flex-start;flex-direction:column;gap:12px}.offerings-heading>p{max-width:440px}.category-card{padding:17px 15px}.study-benefits{grid-template-columns:1fr}.study-benefit{padding:18px 20px;gap:14px}.study-benefit+.study-benefit{border-left:0;border-top:1px solid #d6e2ec}.study-benefit h4{font-size:13px;margin-bottom:4px}.study-benefit p{font-size:12px}.benefit-icon{width:34px;height:34px}.academy-offerings{margin-bottom:34px}}
+@media(max-width:540px){.offerings-heading h3{font-size:23px;letter-spacing:-.6px}.offerings-eyebrow{font-size:8px}.offerings-heading>p{font-size:11px}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.category-card,.category-card:nth-child(n+5){grid-column:span 1;padding:16px}.category-card:last-child{grid-column:1/-1;display:grid;grid-template-columns:75px 1fr;column-gap:17px;align-items:center}.category-card:last-child .category-top{grid-column:1;grid-row:1/3;margin:0;align-self:start}.category-card:last-child .vehicle-icon{grid-column:2;grid-row:1;margin-bottom:6px}.category-card:last-child .category-name{grid-column:2;grid-row:2}.category-name{font-size:11px}.category-top strong{font-size:28px}.study-benefit{padding:17px}.study-benefit p{font-size:11px}#site-language{max-width:99px;font-size:10px;padding-left:8px;padding-right:16px}.nav-wrap{gap:8px}.nav-wrap .menu-toggle{flex-shrink:0;width:36px}.quiz-options.category-options{gap:8px}.category-options .quiz-option{padding:12px 10px}.category-options .quiz-option small{font-size:9px}.result-preferences{padding:13px}.result-preferences>div{gap:12px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.category-card:hover,.category-card:hover .category-arrow{transform:none}}
+@media(max-width:1100px){.nav-wrap>.desktop-nav,.nav-wrap>.header-cta{display:none}.nav-wrap>.menu-toggle{display:block;flex-shrink:0}.nav-wrap>.language-control{margin-left:auto}}

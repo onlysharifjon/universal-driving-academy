@@ -19,7 +19,7 @@
     for (const button of buttons) {
       button.hidden = reducedMotion.matches;
       button.setAttribute('aria-pressed', String(paused));
-      const label = paused ? 'Animatsiyalarni yoqish' : 'Animatsiyalarni to‘xtatish';
+      const label = window.UDA_I18N ? window.UDA_I18N.t(paused ? 'ui.resume' : 'ui.pause') : (paused ? 'Animatsiyalarni yoqish' : 'Animatsiyalarni to‘xtatish');
       button.setAttribute('aria-label', label);
       button.title = label;
     }
@@ -27,6 +27,7 @@
   buttons.forEach(button => button.addEventListener('click', () => { paused = !paused; updateMotion(); }));
   reducedMotion.addEventListener('change', updateMotion);
   document.addEventListener('visibilitychange', updateMotion);
+  document.addEventListener('uda:languagechange', updateMotion);
 
   const canvas = document.getElementById('earth-canvas');
   if (canvas) earth = createEarth(canvas);
