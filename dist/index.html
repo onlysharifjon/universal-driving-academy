@@ -13,8 +13,11 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preload" href="assets/manrope-regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="globe.css">
+  <link rel="stylesheet" href="cta-motion.css">
   <script src="config.js" defer></script>
   <script src="app.js" defer></script>
+  <script src="animations.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Asosiy mazmunga o‘tish</a>
@@ -94,10 +97,16 @@
       <ol class="process-steps"><li><span class="step-number">01</span><h3>Maqsadni tanlang</h3><p>Tajribangiz va nimani o‘rganmoqchi ekaningizni belgilang.</p></li><li><span class="step-number">02</span><h3>Rejani aniqlashtiring</h3><p>Dastur, dars vaqti va o‘qish shartlarini kelishib oling.</p></li><li><span class="step-number">03</span><h3>Bilimni amalda qo‘llang</h3><p>Nazariyani tushunib, ko‘nikmalaringizni bosqichma-bosqich rivojlantiring.</p></li><li><span class="step-number">04</span><h3>Ishonchni mustahkamlang</h3><p>O‘rganganlaringizni tahlil qiling va keyingi maqsadingizni belgilang.</p></li></ol>
     </section>
 
-    <section class="international-section" aria-labelledby="international-title">
+    <section class="international-section" id="xalqaro" aria-labelledby="international-title">
       <div class="container international-layout">
         <div><div class="eyebrow light">UNIVERSAL — KENGROQ FIKRLASH</div><h2 id="international-title">Manzilingiz<br>yanada uzoqmi?</h2><p>Boshqa mamlakatda haydashni rejalashtiryapsizmi? Tayyorgarlikni to‘g‘ri savollardan boshlang: qayerga, qanday maqsadda va qaysi hujjatlar bilan?</p><button class="button button-white" data-open-quiz data-preset="international">Xalqaro yo‘nalishni tanlash <svg><use href="#diagonal"/></svg></button><small>Guvohnoma va hujjatlarning amal qilish shartlari mamlakatga qarab farqlanadi.</small></div>
-        <div class="global-graphic" aria-hidden="true"><div class="globe-orbit orbit-one"></div><div class="globe-orbit orbit-two"></div><svg viewBox="0 0 400 400" class="globe-art"><circle cx="200" cy="200" r="144"/><ellipse cx="200" cy="200" rx="63" ry="144"/><ellipse cx="200" cy="200" rx="117" ry="144"/><path d="M57 200h286M75 131h250M75 269h250M108 88h184M108 312h184"/><path class="flight-path" d="M57 245C129 167 263 138 341 122"/><circle class="route-point" cx="77" cy="226" r="8"/><circle class="route-point" cx="319" cy="131" r="8"/></svg><span class="globe-badge"><svg><use href="#diagonal"/></svg> YANGI MANZILLAR SARI</span></div>
+        <div class="global-graphic motion-scene" data-motion-scene="earth" data-motion-active="false">
+          <div class="globe-orbit orbit-one" aria-hidden="true"></div><div class="globe-orbit orbit-two" aria-hidden="true"></div>
+          <div class="earth-stage" aria-hidden="true"><img class="earth-fallback" src="assets/earth-fallback.webp" width="720" height="720" alt="" loading="lazy"><canvas id="earth-canvas" width="480" height="480"></canvas></div>
+          <span class="globe-badge" aria-hidden="true"><svg><use href="#diagonal"/></svg> YANGI MANZILLAR SARI</span>
+          <button class="motion-toggle" type="button" data-motion-toggle aria-label="Animatsiyalarni to‘xtatish" aria-pressed="false" hidden><svg class="pause-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg><svg class="play-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg></button>
+          <a class="earth-credit" href="https://science.nasa.gov/earth/earth-observatory/the-blue-marble-true-color-global-imagery-at-1km-resolution/" target="_blank" rel="noopener noreferrer">Yer tasviri: NASA</a>
+        </div>
       </div>
     </section>
 
@@ -112,7 +121,7 @@
       </div>
     </section>
 
-    <section class="container final-cta" id="aloqa" aria-labelledby="cta-title"><div class="cta-graphic" aria-hidden="true"><svg><use href="#wheel"/></svg></div><div class="cta-copy"><div class="eyebrow">BIRINCHI QADAM SIZDAN</div><h2 id="cta-title">Yo‘l sizni kutmoqda.</h2><p>Bir daqiqa ajrating. O‘zingizga mos boshlanishni toping.</p><button class="button" data-open-quiz>Yo‘nalishimni topish <svg><use href="#diagonal"/></svg></button><div id="contact-info" class="contact-info"><span>Qabul bo‘yicha aloqa ma’lumotlari hozircha ko‘rsatilmagan.</span></div></div></section>
+    <section class="container final-cta motion-scene" id="aloqa" aria-labelledby="cta-title" data-motion-scene="steering" data-motion-active="false"><button class="motion-toggle" type="button" data-motion-toggle aria-label="Animatsiyalarni to‘xtatish" aria-pressed="false" hidden><svg class="pause-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg><svg class="play-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg></button><div class="cta-graphic" aria-hidden="true"><svg><use href="#wheel"/></svg></div><div class="cta-copy"><div class="eyebrow">BIRINCHI QADAM SIZDAN</div><h2 id="cta-title">Yo‘l sizni kutmoqda.</h2><p>Bir daqiqa ajrating. O‘zingizga mos boshlanishni toping.</p><button class="button" data-open-quiz>Yo‘nalishimni topish <svg><use href="#diagonal"/></svg></button><div id="contact-info" class="contact-info"><span>Qabul bo‘yicha aloqa ma’lumotlari hozircha ko‘rsatilmagan.</span></div></div></section>
   </main>
 
   <footer class="site-footer container"><div class="footer-top"><a class="brand" href="#" aria-label="Bosh sahifaga"><img src="assets/uda-brand.svg" alt="Universal Driving Academy" width="160" height="61" loading="lazy"></a><p>Bilim. Mas’uliyat. Erkinlik.</p><a href="#main" class="back-top">Yuqoriga <svg><use href="#diagonal"/></svg></a></div><div class="footer-bottom"><span>© <span id="year">2026</span> Universal Driving Academy.</span><span>Har bir yo‘l — yangi imkoniyat.</span></div></footer>

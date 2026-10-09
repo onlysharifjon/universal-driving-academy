@@ -1,0 +1,28 @@
+.global-graphic{isolation:isolate;min-width:0;padding-bottom:24px}
+.earth-stage{position:relative;width:min(420px,100%);aspect-ratio:1;z-index:2;filter:drop-shadow(12px 20px 30px #00000035);pointer-events:none}
+.earth-stage img,.earth-stage canvas{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.earth-stage canvas{opacity:0;transition:opacity .65s ease}
+.earth-stage.is-ready canvas{opacity:1}
+.earth-stage.is-ready img{visibility:hidden}
+.global-graphic .globe-orbit{pointer-events:none;z-index:0;max-width:96%;aspect-ratio:1;height:auto;border-color:#41648466}
+.global-graphic .orbit-two{max-width:110%;border-color:#6989a344;opacity:.65}
+.global-graphic .orbit-one::before{content:'';position:absolute;left:50%;top:-3px;width:6px;height:6px;border-radius:50%;background:#badfff;box-shadow:0 0 14px #6eb6ff99}
+.global-graphic .orbit-one{animation:earth-satellite 42s linear infinite;animation-play-state:paused}
+.global-graphic[data-motion-active="true"] .orbit-one{animation-play-state:running}
+.global-graphic .globe-badge{bottom:47px;right:0;box-shadow:0 10px 35px #00122630}
+.motion-toggle{position:absolute;display:grid;place-items:center;width:34px;height:34px;z-index:5;border:1px solid #7395b45c;border-radius:50%;background:#173c60;color:#d6eaff;cursor:pointer;transition:background .2s}
+.motion-toggle:hover{background:#295579}
+.motion-toggle svg{width:14px;height:14px;stroke-width:2}
+.motion-toggle .play-symbol{display:none}
+.motion-toggle[aria-pressed="true"] .pause-symbol{display:none}
+.motion-toggle[aria-pressed="true"] .play-symbol{display:block}
+.global-graphic .motion-toggle{bottom:8px;left:20px}
+.earth-credit{position:absolute;right:7px;bottom:9px;z-index:4;color:#b6ccdf;font-size:8px;padding:6px;letter-spacing:.3px}
+.earth-credit:hover{color:white;text-decoration:underline}
+.final-cta>.motion-toggle{top:18px;right:18px;background:#ffffffaa;color:#43698b;border-color:#bfd0e0;z-index:4}
+.final-cta>.motion-toggle:hover{background:white}
+@keyframes earth-satellite{from{transform:rotate(-20deg)}to{transform:rotate(340deg)}}
+@media(max-width:1100px){.earth-stage{width:min(375px,100%)}.global-graphic .globe-badge{bottom:37px}}
+@media(max-width:800px){.earth-stage{width:min(290px,100%)}.global-graphic{padding-bottom:30px}.global-graphic .globe-badge{bottom:45px;right:-5px}.global-graphic .motion-toggle{left:3px;bottom:0}.earth-credit{bottom:0;font-size:7px}}
+@media(max-width:540px){.global-graphic{min-height:330px;padding-block:5px 36px}.earth-stage{width:min(320px,100%)}.global-graphic .globe-badge{right:0;bottom:44px}.global-graphic .motion-toggle{left:16px;bottom:0}.earth-credit{right:13px}.final-cta>.motion-toggle{width:30px;height:30px;top:15px;right:15px}}
+@media(prefers-reduced-motion:reduce){.earth-stage canvas{transition:none}}

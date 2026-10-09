@@ -1,0 +1,55 @@
+/* The visibility and motion controller owns animation playback. */
+.final-cta .cta-graphic {
+  pointer-events: none;
+}
+
+.final-cta .cta-graphic > svg {
+  transform-box: view-box;
+  transform-origin: center;
+  animation: uda-cta-steer 8s cubic-bezier(.45, 0, .55, 1) infinite;
+}
+
+/* A single quiet marker travels around the existing outer ring. */
+.final-cta .cta-graphic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 4px, #8eafcb 0 3px, transparent 3.5px);
+  opacity: .65;
+  transform-origin: center;
+  animation: uda-cta-orbit 22s linear infinite;
+}
+
+.final-cta .cta-graphic::after {
+  transform-origin: center;
+  animation: uda-cta-pulse 5.6s ease-in-out infinite;
+}
+
+.final-cta .cta-graphic > svg,
+.final-cta .cta-graphic::before,
+.final-cta .cta-graphic::after {
+  animation-play-state: paused;
+}
+
+.final-cta[data-motion-active="true"] .cta-graphic > svg,
+.final-cta[data-motion-active="true"] .cta-graphic::before,
+.final-cta[data-motion-active="true"] .cta-graphic::after {
+  animation-play-state: running;
+}
+
+@keyframes uda-cta-steer {
+  0%, 100% { transform: rotate(-25deg); }
+  22% { transform: rotate(-30deg); }
+  62% { transform: rotate(22deg); }
+}
+
+@keyframes uda-cta-orbit {
+  from { transform: rotate(-30deg); }
+  to { transform: rotate(330deg); }
+}
+
+@keyframes uda-cta-pulse {
+  0%, 100% { transform: scale(1); opacity: .7; }
+  50% { transform: scale(1.035); opacity: 1; }
+}
