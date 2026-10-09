@@ -1,0 +1,10 @@
+Use case: ads-marketing.
+Asset type: one square photographic vehicle-category image for the Universal Driving Academy website carousel, 1024 by 1024 pixels.
+Style: premium realistic automotive photography, physically plausible proportions and details, absolutely photographic rather than illustration or CGI.
+Scene/backdrop: a modern closed driving-school training ground with clean dry asphalt, subtle lane markings, only a few small distant training cones, an understated low white-and-navy academy facility far in the background, pale blue sky with soft clouds. No people.
+Composition/framing: a single parked vehicle in a three-quarter front-and-side view, facing slightly toward the viewer's left, clear stable neutral camera perspective. Entire vehicle fully visible including every wheel, mirrors and all extremities; centered within the central 78 percent of the image width. Generous quiet space above and below; vehicle not cropped. Square composition suitable for a website image card.
+Lighting/mood: soft cloudy daylight, refined natural reflections, crisp realistic materials, calm trustworthy professional mood.
+Color palette: cobalt blue, deep navy and clean white vehicle surfaces, black tires, light neutral asphalt, pale blue sky. Consistent premium fleet photography.
+Text: none.
+Constraints: no people, no letters, no readable license plate text, no brand badges, no logos, no watermarks, no captions, no border, no collage.
+Subject: exactly one modern compact four-door passenger sedan suitable for category B driving lessons. Cobalt blue body with restrained white side-mirror housings, clear windows and natural black tires. Clean anonymous contemporary car design without manufacturer badges. Passenger car only, no trailers or other foreground vehicles.

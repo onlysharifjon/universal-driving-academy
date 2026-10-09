@@ -29,7 +29,14 @@ Preview with a static HTTP server, for example:
 python -m http.server 4173 --bind 127.0.0.1 --directory dist
 
 Brand logo: outlined SVG from the approved UDA vector reconstruction.
-Hero image: AI-generated illustrative brand concept, not a photo of actual facilities.
+Hero carousel: seven AI-generated illustrative vehicle concepts, not photos of
+the academy's actual fleet or facilities. Optimized 1024px WebP files are at
+dist/assets/category-{a,b,c,d,be,de,ce}.webp. Exact generation prompts are kept
+in source-assets/category-*-prompt.txt. Built-in image generation was used.
+The full square images remain uncropped; category captions sit below them.
+Carousel behavior: dist/carousel.js and dist/carousel.css. It advances every
+six seconds with previous/next, category selectors and pause/play controls.
+Manual interaction pauses autoplay, and reduced-motion mode uses manual slides.
 Font: Manrope, SIL Open Font License (dist/assets/manrope-OFL.txt).
 
 Animated Earth: dist/animations.js and dist/globe.css use a spherical WebGL

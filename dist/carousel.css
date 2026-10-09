@@ -1,0 +1,32 @@
+.hero-carousel{height:auto;min-width:0;background:#e7edf3;border:1px solid #dce6ee;display:flex;flex-direction:column;isolation:isolate}
+.carousel-slides{position:relative;flex:none;aspect-ratio:1;min-height:0;margin-bottom:80px;overflow:visible;touch-action:pan-y pinch-zoom}
+.carousel-slide{position:absolute;inset:0;margin:0;animation:carousel-appear .45s ease-out}
+.hero-carousel .hero-photo{width:100%;height:100%;object-fit:contain;object-position:center;transform:none!important;transition:none}
+.carousel-caption{position:absolute;z-index:2;top:100%;left:0;right:0;height:80px;padding:12px 20px;display:flex;align-items:center;gap:14px;background:var(--navy);color:#fff}
+.carousel-category{display:grid;place-items:center;flex-shrink:0;min-width:57px;height:57px;border:1px solid #ffffff70;border-radius:12px;background:#ffffff1f;backdrop-filter:blur(8px);font-weight:700;font-size:26px;letter-spacing:-.6px;padding-inline:10px}
+.carousel-caption>div{min-width:0}
+.carousel-kicker{display:none}
+.carousel-caption strong{display:block;font-size:19px;line-height:1.35;letter-spacing:-.4px;text-wrap:balance}
+.carousel-ordinal{margin-left:auto;white-space:nowrap;font-size:10px;font-weight:700;color:#e0edfa;align-self:flex-end;padding-bottom:3px}
+.carousel-topline{position:absolute;top:20px;left:20px;right:20px;z-index:3;display:flex;justify-content:space-between;gap:12px;align-items:center;pointer-events:none}
+.carousel-topline>span:first-child{padding:7px 11px;border:1px solid #fff9;border-radius:6px;background:#ffffffd9;color:var(--navy);font-size:8px;font-weight:700;letter-spacing:1.2px}
+.carousel-concept{color:#173f63;font-size:8px;background:#ffffffb8;border-radius:4px;padding:3px 7px}
+.carousel-toolbar{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:16px 20px;background:#fff;z-index:3;border-top:1px solid #e3eaf0;flex-shrink:0}
+.carousel-selectors{display:flex;align-items:center;gap:5px;min-width:0}
+.carousel-selectors button{display:grid;place-items:center;border:0;background:transparent;border-radius:6px;min-width:29px;height:34px;padding:3px 5px;color:#677e95;font-size:10px;font-weight:700;transition:background .2s,color .2s}
+.carousel-selectors button:hover{background:#edf4fb;color:var(--blue)}
+.carousel-selectors button[aria-current=true]{background:var(--navy);color:#fff}
+.carousel-controls{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.carousel-controls button{display:grid;place-items:center;width:31px;height:34px;padding:0;border:1px solid #dfe7ee;border-radius:7px;background:#fff;color:var(--navy)}
+.carousel-controls button:hover{border-color:#8daeca;background:#f3f7fc}
+.carousel-controls svg{width:16px;height:16px}
+[data-carousel-prev] svg{transform:rotate(180deg)}
+[data-carousel-toggle][data-playing=true] .carousel-play-icon,[data-carousel-toggle][data-playing=false] .carousel-pause-icon{display:none}
+.carousel-controls button:disabled{cursor:default;opacity:.4}
+.carousel-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@keyframes carousel-appear{from{opacity:0}to{opacity:1}}
+@media(min-width:801px) and (max-width:1200px){.carousel-toolbar{padding:12px;gap:7px}.carousel-selectors{gap:2px}.carousel-selectors button{min-width:25px;padding-inline:4px}.carousel-controls{gap:3px}.carousel-controls button{width:27px}.carousel-caption{padding-inline:16px;gap:10px}.carousel-caption strong{font-size:16px}.carousel-category{min-width:49px;height:49px;font-size:23px}.carousel-ordinal{display:none}}
+@media(max-width:800px){.carousel-caption strong{font-size:22px}.carousel-toolbar{padding-inline:22px}.carousel-selectors{gap:8px}.carousel-selectors button{min-width:37px;height:38px;font-size:11px}.carousel-controls button{width:36px;height:38px}}
+@media(max-width:540px){.carousel-topline{top:14px;left:14px;right:14px;gap:8px}.carousel-topline>span:first-child{font-size:6px;padding:6px 8px;letter-spacing:.8px}.carousel-concept{font-size:7px}.carousel-caption{padding-inline:16px;gap:10px}.carousel-caption strong{font-size:15px}.carousel-category{min-width:47px;height:47px;font-size:22px;border-radius:9px}.carousel-ordinal{display:none}.carousel-toolbar{padding:12px 10px;gap:6px;flex-wrap:wrap}.carousel-selectors{gap:3px;flex:1;justify-content:space-between}.carousel-selectors button{min-width:25px;height:34px;font-size:9px;padding-inline:4px}.carousel-controls{gap:3px}.carousel-controls button{width:27px;height:34px}}
+@media(max-width:359px){.carousel-toolbar{justify-content:center;row-gap:9px}.carousel-selectors{flex-basis:100%;justify-content:space-between}.carousel-controls button{width:37px}}
+@media(prefers-reduced-motion:reduce){.carousel-slide{animation:none}.carousel-selectors button{transition:none}}

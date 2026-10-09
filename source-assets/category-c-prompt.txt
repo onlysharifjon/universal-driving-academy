@@ -1,0 +1,10 @@
+Use case: ads-marketing.
+Asset type: one square photographic vehicle-category image for the Universal Driving Academy website carousel, 1024 by 1024 pixels.
+Style: premium realistic automotive photography, physically plausible proportions and details, absolutely photographic rather than illustration or CGI.
+Scene/backdrop: a modern closed driving-school training ground with clean dry asphalt, subtle lane markings, only a few small distant training cones, an understated low white-and-navy academy facility far in the background, pale blue sky with soft clouds. No people.
+Composition/framing: a single parked vehicle in a three-quarter front-and-side view, facing slightly toward the viewer's left, clear stable neutral camera perspective. Entire vehicle fully visible including every wheel, mirrors and all extremities; centered within the central 78 percent of the image width. Generous quiet space above and below; vehicle not cropped. Square composition suitable for a website image card.
+Lighting/mood: soft cloudy daylight, refined natural reflections, crisp realistic materials, calm trustworthy professional mood.
+Color palette: cobalt blue, deep navy and clean white vehicle surfaces, black tires, light neutral asphalt, pale blue sky. Consistent premium fleet photography.
+Text: none.
+Constraints: no people, no letters, no readable license plate text, no brand badges, no logos, no watermarks, no captions, no border, no collage.
+Subject: exactly one medium-duty two-axle RIGID BOX TRUCK suitable for category C licence training. Cobalt blue cab, clean white closed rectangular cargo box fixed permanently to the same single chassis. Clearly show the integrated cab and box body with realistic commercial-truck proportions and two axles. No articulated connection, no fifth wheel, no separate trailer and no tractor unit. Entire rigid truck visible in frame.
